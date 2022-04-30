@@ -2,15 +2,20 @@ import * as React from 'react';
 import AddTeamMemberButton from './AddTeamMemberButton';
 import SearchForm from './SearchForm'
 import Dropdown from 'react-bootstrap/Dropdown';
-import members, { member} from '../data/dataMembers'
+import members from '../data/dataMembers'
+import { member } from '../data/types'
+import { useSelector, useDispatch } from 'react-redux'
+import { addMember } from '../store/team'
 
 export interface IAppProps {
 }
 
 export default function TeamListForTest (props: IAppProps) {
+  const dispatch = useDispatch();
+  // const team = useSelector((state: RootState) => state.teamMembers);
 
-  const addMember = (member: member) => {
-    console.log(member)
+  const addMemberToList = (member: member) => {
+    dispatch(addMember(member))
   }
 
   return (
@@ -25,7 +30,7 @@ export default function TeamListForTest (props: IAppProps) {
             <Dropdown.Item 
               eventKey={member.id} 
               key={member.id}
-              onClick={() => addMember(member)}
+              onClick={() => addMemberToList(member)}
             >
               {member.username}
             </Dropdown.Item>

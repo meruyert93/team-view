@@ -1,16 +1,20 @@
-import { useState } from "react";
 import css from "./App.module.scss";
 import "./css/style.css"
 import 'bootstrap/dist/css/bootstrap.min.css';
-import TeamListForTest from './components/TeamListForTest'
+import AddTeamListForTest from './components/AddTeamListForTest';
+import TeamList from './components/TeamList'
+import { Provider } from "react-redux";
+import store from "./store/store";
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
-    <div className={css["App"]}>
-        <TeamListForTest/>
-    </div>
+    <Provider store={store}>
+      <div className={css["App"]}>
+          <AddTeamListForTest/>
+          <TeamList/>
+      </div>
+    </Provider>
+
   );
 }
 
