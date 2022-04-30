@@ -21,7 +21,7 @@ const AddTeamMemberButton = React.forwardRef<Ref, IProps>((props, ref) => {
       }}
     >
       <MdAddCircle className="addTeamMemberIcon"/>
-      {props.children}
+      <span className='buttonText'>{props.children}</span>
     </Button>
   )
 })

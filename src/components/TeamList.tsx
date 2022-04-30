@@ -16,7 +16,7 @@ const TeamList = (props: Props) => {
   }
 
   return (
-    <div>
+    <div className='teamList'>
       {
         team.teamMembers.map(member => {
           return (

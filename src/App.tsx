@@ -1,4 +1,3 @@
-import css from "./App.module.scss";
 import "./css/style.css"
 import 'bootstrap/dist/css/bootstrap.min.css';
 import AddTeamListForTest from './components/AddTeamListForTest';
@@ -9,9 +8,12 @@ import store from "./store/store";
 function App() {
   return (
     <Provider store={store}>
-      <div className={css["App"]}>
-          <AddTeamListForTest/>
-          <TeamList/>
+      <div className="app">
+        <h1 className='headerText'>Your team for this test</h1>
+        <div className='componentsWrapper'>
+            <AddTeamListForTest/>
+            <TeamList/>
+        </div>
       </div>
     </Provider>
 

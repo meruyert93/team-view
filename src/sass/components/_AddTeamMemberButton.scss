@@ -6,9 +6,21 @@
     font-weight: 600;
     color: #007672;
     transition: all;
+    padding: 20px;
+    display: flex;
+    gap: 10px;
 
     &:hover {
       background-color: #e2f4ea;
     }
+  }
+
+  .addTeamMemberIcon {
+    font-size: 50px;
+  }
+
+  .buttonText {
+    width: 150px;
+    text-align: start;
   }
 }

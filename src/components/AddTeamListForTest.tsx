@@ -21,7 +21,7 @@ export default function TeamListForTest (props: IAppProps) {
   return (
     <Dropdown>
       <Dropdown.Toggle as={AddTeamMemberButton}>
-        Add Team member to this test
+        Add team member to this test
       </Dropdown.Toggle>
 
       <Dropdown.Menu as={SearchForm}>

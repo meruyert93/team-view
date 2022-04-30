@@ -1,9 +1,18 @@
 #root {
-  .teamList {
+  .app {
+    margin: 80px;
+  }
+
+  .headerText {
+    font-size: 32px;
+    padding: 20px;
+    color: #999999;
+  }
+
+  .componentsWrapper {
     display: flex;
     flex-direction: column;
-  
-
+    
     @media (min-width: 768px) {
       flex-direction: row;
       flex-wrap: wrap;

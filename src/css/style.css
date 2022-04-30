@@ -4,7 +4,10 @@
   color: black;
   font-weight: 600;
   color: #007672;
-  transition: all; }
+  transition: all;
+  padding: 20px;
+  display: flex;
+  gap: 10px; }
   #root .addTeamMemberButton:focus-visible, #root .addTeamMemberButton:focus, #root .addTeamMemberButton:hover, #root .addTeamMemberButton:active {
     border: none;
     box-shadow: none;
@@ -12,11 +15,19 @@
   #root .addTeamMemberButton:hover {
     background-color: #e2f4ea; }
 
+#root .addTeamMemberIcon {
+  font-size: 50px; }
+
+#root .buttonText {
+  width: 150px;
+  text-align: start; }
+
 #root .memberItem {
   display: flex;
   gap: 16px;
   padding: 20px;
-  cursor: pointer; }
+  cursor: pointer;
+  width: 50%; }
   #root .memberItem:hover {
     background-color: #e2f4ea; }
 
@@ -28,7 +39,8 @@
 
 #root .memberImage {
   border-radius: 100%;
-  width: 50px; }
+  width: 50px;
+  height: 50px; }
 
 #root .deleteIcon {
   font-size: 50px;
@@ -39,3 +51,29 @@
 
 #root .role {
   color: #455b57; }
+
+#root .teamList {
+  display: flex;
+  flex-direction: column; }
+  @media (min-width: 768px) {
+    #root .teamList {
+      flex-direction: row;
+      flex-wrap: wrap;
+      width: 80%; } }
+
+#root .app {
+  margin: 80px; }
+
+#root .headerText {
+  font-size: 32px;
+  padding: 20px;
+  color: #999999; }
+
+#root .componentsWrapper {
+  display: flex;
+  flex-direction: column; }
+  @media (min-width: 768px) {
+    #root .componentsWrapper {
+      flex-direction: row;
+      flex-wrap: wrap;
+      width: 80%; } }
