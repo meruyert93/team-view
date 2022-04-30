@@ -11,3 +11,31 @@
     outline: none; }
   #root .addTeamMemberButton:hover {
     background-color: #e2f4ea; }
+
+#root .memberItem {
+  display: flex;
+  gap: 16px;
+  padding: 20px;
+  cursor: pointer; }
+  #root .memberItem:hover {
+    background-color: #e2f4ea; }
+
+#root .infoWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start; }
+
+#root .memberImage {
+  border-radius: 100%;
+  width: 50px; }
+
+#root .deleteIcon {
+  font-size: 50px;
+  fill: #fd7e41; }
+
+#root .username {
+  font-weight: 600; }
+
+#root .role {
+  color: #455b57; }

@@ -1,0 +1,37 @@
+#root {
+  .memberItem {
+    display: flex;
+    gap: 16px;
+    padding: 20px;
+    cursor: pointer;
+
+    &:hover {
+      background-color: #e2f4ea;
+    }
+  }
+
+  .infoWrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+  }
+
+  .memberImage {
+    border-radius: 100%;
+    width: 50px;
+  }
+
+  .deleteIcon {
+    font-size: 50px;
+    fill: #fd7e41;
+  }
+
+  .username {
+    font-weight: 600;
+  }
+
+  .role {
+    color: #455b57;
+  }
+}
