@@ -1,0 +1,13 @@
+#root .addTeamMemberButton {
+  background-color: transparent;
+  border: none;
+  color: black;
+  font-weight: 600;
+  color: #007672;
+  transition: all; }
+  #root .addTeamMemberButton:focus-visible, #root .addTeamMemberButton:focus, #root .addTeamMemberButton:hover, #root .addTeamMemberButton:active {
+    border: none;
+    box-shadow: none;
+    outline: none; }
+  #root .addTeamMemberButton:hover {
+    background-color: #e2f4ea; }

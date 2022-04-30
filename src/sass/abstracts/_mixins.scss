@@ -1,0 +1,15 @@
+@mixin reset-button {
+  background-color: transparent;
+  border: none;
+  color: black;
+
+  &:focus-visible,
+  &:focus,
+  &:hover,
+  &:active {
+    border: none;
+    box-shadow: none;
+    outline: none;
+  }
+
+}

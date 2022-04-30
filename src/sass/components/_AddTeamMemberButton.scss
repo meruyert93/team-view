@@ -1,0 +1,14 @@
+@import "../abstracts/mixins";
+
+#root {
+  .addTeamMemberButton {
+    @include reset-button();
+    font-weight: 600;
+    color: #007672;
+    transition: all;
+
+    &:hover {
+      background-color: #e2f4ea;
+    }
+  }
+}
