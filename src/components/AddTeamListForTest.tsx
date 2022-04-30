@@ -4,15 +4,11 @@ import SearchForm from './SearchForm'
 import Dropdown from 'react-bootstrap/Dropdown';
 import members from '../data/dataMembers'
 import { member } from '../data/types'
-import { useSelector, useDispatch } from 'react-redux'
+import { useDispatch } from 'react-redux'
 import { addMember } from '../store/team'
 
-export interface IAppProps {
-}
-
-export default function TeamListForTest (props: IAppProps) {
+export default function TeamListForTest () {
   const dispatch = useDispatch();
-  // const team = useSelector((state: RootState) => state.teamMembers);
 
   const addMemberToList = (member: member) => {
     dispatch(addMember(member))
