@@ -6,13 +6,19 @@ type IProps = {
   children: React.ReactNode;
   className: string,
   'aria-labelledby': string,
+  inputValue: string,
+  onChange: React.ChangeEventHandler<typeof FormControl>,
 }
 
 export type Ref = HTMLDivElement
 
 const SearchForm = React.forwardRef<Ref, IProps>(
-  ({ children, style, className, 'aria-labelledby': labeledBy }, ref) => {
-    const [value, setValue] = React.useState<string>('');
+  ({ children, style, className, 'aria-labelledby': labeledBy, inputValue, onChange }, ref) => {
+    // const [value, setValue] = React.useState<string>('');
+
+    const filteredList = React.Children.toArray(children).filter(
+      (child: any) => child.props.children.toLowerCase().startsWith(inputValue)
+    )
 
     return (
       <div
@@ -25,16 +31,26 @@ const SearchForm = React.forwardRef<Ref, IProps>(
           autoFocus
           className="input"
           placeholder="Type to filter..."
-          onChange={(e) => setValue(e.target.value)}
-          value={value}
-        />
-        <ul className="list">
-          {React.Children.toArray(children).filter(
-            // eslint-disable-next-line @typescript-eslint/no-explicit-any
-            (child: any) =>
-              !value || child.props.children.toLowerCase().startsWith(value)
-          )}
-        </ul>
+          onChange={(e) => {
+            e.preventDefault()
+            onChange(e)
+          }}
+          value={inputValue}
+        /> 
+          {
+            filteredList.length 
+            ? (
+              <ul className="list">
+                {filteredList}
+              </ul>
+            )
+            : (
+              <div className="emptyList">
+                <span className='notFoundInfo'>Team member not found</span>
+                <span className='notInTheTeamInfo'>Maybe she/he is not yet in your team?</span>
+              </div>
+            )
+          }
       </div>
     );
   },

@@ -10,9 +10,23 @@ import { addMember } from '../store/team'
 
 export default function TeamListForTest () {
   const dispatch = useDispatch();
+  const [areMoreShown, setAreMoreShown] = React.useState<boolean>(false)
+  const [noOfElements, setnoOfElements] = React.useState<number>(5);
+  const [inputValue, setInputValue] = React.useState<string>('');
+  const slice = members.slice(0, noOfElements);
 
   const addMemberToList = (member: member) => {
     dispatch(addMember(member))
+  }
+
+  const toggleLengthOfMembers = () => {
+    if(slice.length > 5)  {
+      setnoOfElements(noOfElements - 5)
+      setAreMoreShown(false)
+    } else {
+      setnoOfElements(noOfElements + 5)
+      setAreMoreShown(true)
+    } 
   }
 
   return (
@@ -21,18 +35,44 @@ export default function TeamListForTest () {
         Add team member to this test
       </Dropdown.Toggle>
 
-      <Dropdown.Menu as={SearchForm}>
-        {members.map((member: member) => {
-          return (
-            <Dropdown.Item 
-              eventKey={member.id} 
-              key={member.id}
-              onClick={() => addMemberToList(member)}
-            >
-              {member.username}
-            </Dropdown.Item>
+      <Dropdown.Menu 
+        as={SearchForm} 
+        inputValue={inputValue}
+        onChange={(e) => setInputValue((e.target as HTMLInputElement).value)}
+      >
+        {
+          inputValue 
+          ? (
+            members.map((member: member) => {
+              return (
+                <Dropdown.Item 
+                  eventKey={member.id} 
+                  key={member.id}
+                  onClick={() => addMemberToList(member)}
+                  
+                >
+                  {member.username}
+                </Dropdown.Item>
+              )
+            })
+          ) 
+          : (
+            slice.map((member: member) => {
+              return (
+                <Dropdown.Item 
+                  eventKey={member.id} 
+                  key={member.id}
+                  onClick={() => addMemberToList(member)}
+                >
+                  {member.username}
+                </Dropdown.Item>
+              )
+            })
           )
-        })}
+        }
+        <Button className='toggleButton' onClick={() => toggleLengthOfMembers()}>
+          { areMoreShown ? 'show less ' : 'show more'}
+        </Button>
       </Dropdown.Menu>
     </Dropdown>
   );
