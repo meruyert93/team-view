@@ -14,7 +14,6 @@ export type Ref = HTMLDivElement
 
 const SearchForm = React.forwardRef<Ref, IProps>(
   ({ children, style, className, 'aria-labelledby': labeledBy, inputValue, onChange }, ref) => {
-    // const [value, setValue] = React.useState<string>('');
 
     const filteredList = React.Children.toArray(children).filter(
       (child: any) => child.props.children.toLowerCase().startsWith(inputValue)
