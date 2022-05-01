@@ -23,12 +23,12 @@ const SearchForm = React.forwardRef<Ref, IProps>(
       >
         <FormControl
           autoFocus
-          className="mx-3 my-2 w-auto"
+          className="input"
           placeholder="Type to filter..."
           onChange={(e) => setValue(e.target.value)}
           value={value}
         />
-        <ul className="list-unstyled">
+        <ul className="list">
           {React.Children.toArray(children).filter(
             // eslint-disable-next-line @typescript-eslint/no-explicit-any
             (child: any) =>

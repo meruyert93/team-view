@@ -1,0 +1,20 @@
+#root {
+  .input {
+    margin-top: 8px;
+    margin-bottom: 8px;
+    margin-right: 16px;
+    margin-left: 16px;
+    width: auto;
+  }
+
+  .list {
+    padding-left: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .dropdown-item:active {
+    background-color: #007672 !important;
+  }
+}

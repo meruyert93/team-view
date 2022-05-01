@@ -77,3 +77,32 @@
       flex-direction: row;
       flex-wrap: wrap;
       width: 80%; } }
+
+#root .toggleButton {
+  background-color: transparent;
+  border: none;
+  color: black;
+  color: #999999;
+  align-self: center; }
+  #root .toggleButton:focus-visible, #root .toggleButton:focus, #root .toggleButton:hover, #root .toggleButton:active {
+    border: none;
+    box-shadow: none;
+    outline: none; }
+  #root .toggleButton:hover {
+    background-color: #e2f4ea; }
+
+#root .input {
+  margin-top: 8px;
+  margin-bottom: 8px;
+  margin-right: 16px;
+  margin-left: 16px;
+  width: auto; }
+
+#root .list {
+  padding-left: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column; }
+
+#root .dropdown-item:active {
+  background-color: #007672 !important; }
