@@ -1,4 +1,4 @@
-# Testbirds - Frontend Development Challenge
+# TeamView
 
 Application was developed by using vite-react-ts template.
 The main purpose was to focus on the main functionality of the task.
