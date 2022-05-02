@@ -7,7 +7,7 @@ type IProps = {
   className: string,
   'aria-labelledby': string,
   inputValue: string,
-  onChange: React.ChangeEventHandler<typeof FormControl>,
+  onChange: React.ChangeEventHandler<HTMLElement>,
 }
 
 export type Ref = HTMLDivElement

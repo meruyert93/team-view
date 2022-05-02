@@ -4,7 +4,7 @@ import { TiDeleteOutline } from 'react-icons/ti'
 import ReactTooltip from 'react-tooltip';
 
 export interface Iprops extends member {
-  onClick: React.MouseEventHandler<HTMLButtonElement>,
+  onClick: React.MouseEventHandler<SVGElement>,
 }
 
 const MemberItem: FunctionComponent<Iprops> = (Iprops) => {
